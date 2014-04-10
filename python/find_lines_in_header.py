@@ -1,3 +1,5 @@
+# Licensed under a 3-clause BSD style license - see LICENSE
+# Copyright Adam Ginsburg
 from astroquery.splatalogue import Splatalogue
 from astroquery.splatalogue import utils as splatutils
 from astropy.wcs import WCS
