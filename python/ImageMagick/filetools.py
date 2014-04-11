@@ -16,4 +16,3 @@ def pruneFilelist(filelist):
             fstart = len(mypwd)
         newfilelist.append(f[fstart:])
     return(newfilelist)
-    

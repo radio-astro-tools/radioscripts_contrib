@@ -1,7 +1,8 @@
 # Licensed under a 3-clause BSD style license - see LICENSE
 # Copyright Todd Hunter
 
-import os, glob
+import os
+import glob
 from filetools import pruneFilelist
 
 def concatenatePDFs(filelist, pdfname, pdftk='pdftk', gs='gs', cleanup=False,
@@ -98,7 +99,7 @@ def buildPdfFromPngs(pnglist=[],pdfname='',convert='convert',gs='gs',
         pdfname = './' + pdfname
     mypath = os.path.dirname(pdfname)
     print "Checking if I have write privilege on %s." % (mypath)
-    if (os.access(mypath, os.W_OK) == False):
+    if (not os.access(mypath, os.W_OK)):
 #        print "no"
         pdfname = '/tmp/%s' % (os.path.basename(pdfname))
     else:
@@ -119,6 +120,4 @@ def buildPdfFromPngs(pnglist=[],pdfname='',convert='convert',gs='gs',
     else:
         print "No PDF created. pdftk and gs (ghostscript) might both be missing"
         print "If so, you can set the full path to pdftk with pdftk='', or to gs with gs=''"
-    return('')
 # end of buildPdfsFromPngs
-
