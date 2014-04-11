@@ -1,3 +1,9 @@
+# Licensed under a 3-clause BSD style license - see LICENSE
+# Copyright Todd Hunter
+
+import os, glob
+from filetools import pruneFilelist
+
 def concatenatePDFs(filelist, pdfname, pdftk='pdftk', gs='gs', cleanup=False,
                     quiet=False):
     """
